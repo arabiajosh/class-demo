@@ -22,8 +22,8 @@ public class MapGenerator : MonoBehaviour
     public int Octaves = 5;
 
     [Range(0f, 1f)]
-    public float Persist = .5f;
-    public float Lacun = 2f;
+    public float Persistence = .5f;
+    public float Lacunarity = 2f;
 
     public int Seed = 0;
     public Vector2 SeedOffset = new Vector2(0f, 0f);
@@ -38,7 +38,7 @@ public class MapGenerator : MonoBehaviour
 
     MappingData GenerateMappingData(Vector2 Center)
     {
-        float[,] NoiseData = Noise.MakeSomeNoise(ChunkEdgeToEdge, ChunkEdgeToEdge, Seed, NoiseScale, Octaves, Persist, Lacun, Center + SeedOffset);
+        float[,] NoiseData = Noise.MakeSomeNoise(ChunkEdgeToEdge, ChunkEdgeToEdge, Seed, NoiseScale, Octaves, Persistence, Lacunarity, Center + SeedOffset);
         Color[] ColorData = new Color[ChunkEdgeToEdge * ChunkEdgeToEdge];
 
         for(int y = 0; y < ChunkEdgeToEdge; y++)
@@ -84,7 +84,7 @@ public class MapGenerator : MonoBehaviour
 
     private void OnValidate()
     {
-        if (Lacun < 1) Lacun = 1;
+        if (Lacunarity < 1) Lacunarity = 1;
         if (Octaves < 0) Octaves = 0;
     }
 }

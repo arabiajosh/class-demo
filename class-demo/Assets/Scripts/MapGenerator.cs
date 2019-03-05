@@ -33,7 +33,7 @@ public class MapGenerator : MonoBehaviour
 
     public TerrainType[] Terrains;
 
-    public bool AutoUpdate = false;
+    public bool AutoUpdate = true;
 
 
     MappingData GenerateMappingData(Vector2 Center)

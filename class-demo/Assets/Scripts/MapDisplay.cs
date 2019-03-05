@@ -25,4 +25,9 @@ public class MapDisplay : MonoBehaviour
         mr.sharedMaterial.mainTexture = null;
     }
 
+    public void ClearTexture()
+    {
+        tr.sharedMaterial.mainTexture = null;
+    }
+
 }

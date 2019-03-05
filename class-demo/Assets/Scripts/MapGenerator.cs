@@ -78,6 +78,7 @@ public class MapGenerator : MonoBehaviour
             display.ClearMesh(); 
         } else if(Mode == drawMode.Mesh)
         {
+            display.ClearTexture();
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(md.NoiseData, MeshHeightMultiplier, MeshHeightCurve, EditorLevelOfDetail), TextureGenerator.TextureFromColorMap(md.ColorData, ChunkEdgeToEdge, ChunkEdgeToEdge));
         }
     }
